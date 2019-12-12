@@ -1,4 +1,4 @@
-# CodeMD
+# CodiMD
 
 Realtime collaborative markdown notes
 
