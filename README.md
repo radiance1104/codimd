@@ -11,9 +11,9 @@ Therefore, don't use insecure network like global network.
 
 Edit `<<>>` in docker-compose.yml, and run below command.
 
-    ```
-    $ docker-compose up -d
-    ```
+  ```
+  $ docker-compose up -d
+  ```
 
 ## Backup
 
