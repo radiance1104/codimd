@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  app:
+    image: linuxserver/codimd:1.5.0-ls20
+    container_name: codimd-app
+    restart: always
+    depends_on:
+      - mysql
+    environment:
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=codimd
+      - DB_PASS=<<password>>
+      - DB_NAME=codimd
+    ports:
+      - <<YOUR PORT>>:3000
+    volumes:
+      - <<YOUR DIRECTORY PATH>>:/config
+
+  mysql:
+    image: mysql:5.7
+    container_name: codimd-mysql
+    restart: always
+    environment:
+      - DB_USER=codimd
+      - DB_PASS=<<password>>
+      - DB_NAME=codimd
+    volumes:
+      - <<YOUR DIRECTORY PATH>>:/var/lib/mysql
